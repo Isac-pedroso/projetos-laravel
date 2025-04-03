@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ProdutoResourcesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +15,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/**
+ * Vamos trabalhor com rotas
+ * Vamos trabalhar com controllers
+ */
+
+/**
+ * Trabalhando com controllers
+ */
+Route::get('/', [ProdutoController::class, 'index']);
+Route::get('/produto/{id?}', [ProdutoController::class, 'show']);
+
+// Rota de Controller com utilização de resources
+Route::resource('produtoresources', ProdutoResourcesController::class);
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
 //Cria rota com view
-/*Route::get('/teste', function(){
+/*
+Route::get('/teste', function(){
     return view('site/teste');
-});*/
+});
+*/
+
+/*
 // Cria rota mais simples com view
 Route::view('/teste', 'site/teste');
 // Cria rota para permitindo apenas os acessos defenidos
@@ -62,3 +85,4 @@ Route::prefix('admin')->group(function(){
         return 'clientes';
     });
 });
+*/
