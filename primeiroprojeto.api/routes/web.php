@@ -16,6 +16,8 @@ use App\Http\Controllers\ProdutoResourcesController;
 */
 
 
+Route::resource('produtos', ProdutoController::class);
+Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
 /**
  * Vamos trabalhor com rotas
  * Vamos trabalhar com controllers
@@ -24,11 +26,11 @@ use App\Http\Controllers\ProdutoResourcesController;
 /**
  * Trabalhando com controllers
  */
-Route::get('/', [ProdutoController::class, 'index']);
-Route::get('/produto/{id?}', [ProdutoController::class, 'show']);
+// //Route::get('/', [ProdutoController::class, 'index']);
+// Route::get('/produto/{id?}', [ProdutoController::class, 'show']);
 
-// Rota de Controller com utilização de resources
-Route::resource('produtoresources', ProdutoResourcesController::class);
+// // Rota de Controller com utilização de resources
+// Route::resource('produtoresources', ProdutoResourcesController::class);
 /*
 Route::get('/', function () {
     return view('welcome');
